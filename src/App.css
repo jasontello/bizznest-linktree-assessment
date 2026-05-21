@@ -1,0 +1,334 @@
+:root {
+  color: #f5f5f0;
+  background: #030303;
+  font-family:
+    Inter, "Helvetica Neue", Arial, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --page-bg: #030303;
+  --paper: #f6f6f0;
+  --ink: #050505;
+  --fish-red: #d53302;
+  --fish-yellow: #fcc560;
+  --fish-green: #a0cba0;
+  --fish-blue: #8fb1be;
+  --fish-navy: #000124;
+  --muted: #8a8a84;
+  --line: rgba(5, 5, 5, 0.38);
+  --page-muted: #9b9b94;
+  --focus: var(--fish-yellow);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--page-bg);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 16px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.055), transparent 30%),
+    var(--page-bg);
+}
+
+.profile-page {
+  width: min(100%, 620px);
+  display: grid;
+  gap: 28px;
+  animation: blur-in 520ms ease both;
+}
+
+.profile-header {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  color: var(--paper);
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 92px;
+  height: 92px;
+  display: block;
+  margin-bottom: 4px;
+  background: var(--paper);
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(246, 246, 240, 0.2);
+}
+
+.role-line {
+  order: 2;
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.profile-copy {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.profile-copy h1 {
+  margin: 0;
+  color: var(--paper);
+  font-family: Inter, "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2.25rem, 10vw, 4.2rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.bio {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.location {
+  margin: 4px 0 0;
+  color: #74746f;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.link-list {
+  display: grid;
+  gap: 10px;
+}
+
+.link-card {
+  --link-accent: var(--paper);
+  --link-ink: var(--fish-navy);
+  min-width: 0;
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 24px;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 16px;
+  color: var(--link-ink);
+  text-decoration: none;
+  background: var(--link-accent);
+  border: 1px solid rgba(246, 246, 240, 0.12);
+  border-radius: 18px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: row-in 560ms ease both;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+.link-card:nth-child(1) {
+  animation-delay: 90ms;
+}
+
+.link-card:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.link-card:nth-child(3) {
+  animation-delay: 210ms;
+}
+
+.link-card:nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.link-card::before {
+  display: none;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08) brightness(1.03);
+}
+
+.link-card:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 5px;
+}
+
+.link-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--link-ink);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--link-ink) 42%, transparent);
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.link-icon::after {
+  display: none;
+}
+
+.link-content {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.link-title {
+  overflow-wrap: anywhere;
+  color: var(--link-ink);
+  font-family: Inter, "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.55rem, 7vw, 2.75rem);
+  font-weight: 850;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.link-description {
+  overflow-wrap: anywhere;
+  color: color-mix(in srgb, var(--link-ink) 72%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--link-ink) 34%, transparent);
+  padding-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.link-arrow {
+  width: 22px;
+  height: 22px;
+  color: var(--link-ink);
+  transition: transform 220ms ease;
+}
+
+.link-card:hover .link-arrow,
+.link-card:focus-visible .link-arrow {
+  transform: translateX(4px);
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 700px) {
+  .app-shell {
+    padding: 56px 24px;
+  }
+
+  .profile-page {
+    gap: 32px;
+  }
+
+  .profile-avatar {
+    width: 104px;
+    height: 104px;
+  }
+
+  .link-card {
+    min-height: 92px;
+    grid-template-columns: 48px minmax(0, 1fr) 28px;
+    gap: 18px;
+    padding: 17px 18px;
+  }
+
+  .link-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile-page {
+    gap: 24px;
+  }
+
+  .profile-avatar {
+    width: 84px;
+    height: 84px;
+  }
+
+  .link-card {
+    grid-template-columns: 38px minmax(0, 1fr) 20px;
+    gap: 12px;
+    min-height: 78px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .link-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
