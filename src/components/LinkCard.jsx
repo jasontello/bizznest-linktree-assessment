@@ -31,7 +31,11 @@ function LinkCard({ link }) {
       aria-label={`${link.title}: ${link.description}`}
     >
       <span className="link-icon" aria-hidden="true">
-        {link.icon}
+        {link.iconImage ? (
+          <img className="link-icon__image" src={link.iconImage} alt="" />
+        ) : (
+          link.icon
+        )}
       </span>
 
       <span className="link-content">
