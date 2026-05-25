@@ -976,6 +976,39 @@ a {
     left: 62px;
   }
 
+  .app-shell[data-layout="list"] .profile-header,
+  .theme-preview[data-layout="list"] .profile-header {
+    padding-top: 80px;
+  }
+
+  .app-shell[data-layout="list"] .profile-mark,
+  .theme-preview[data-layout="list"] .profile-mark {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 134px;
+    height: 76px;
+    margin: 0;
+    z-index: 5;
+  }
+
+  .app-shell[data-layout="list"] .profile-mark__circle,
+  .theme-preview[data-layout="list"] .profile-mark__circle {
+    top: 2px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .app-shell[data-layout="list"] .profile-mark__circle--pink,
+  .theme-preview[data-layout="list"] .profile-mark__circle--pink {
+    left: 31px;
+  }
+
+  .app-shell[data-layout="list"] .profile-mark__circle--yellow,
+  .theme-preview[data-layout="list"] .profile-mark__circle--yellow {
+    left: 62px;
+  }
+
   .app-shell[data-layout="grid"] .profile-mark,
   .theme-preview[data-layout="grid"] .profile-mark {
     width: 134px;
