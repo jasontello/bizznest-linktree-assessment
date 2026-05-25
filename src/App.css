@@ -977,9 +977,14 @@ a {
     padding-top: 80px;
   }
 
+  .app-shell[data-layout="list"] .profile-page,
+  .theme-preview[data-layout="list"] .profile-page {
+    position: static;
+  }
+
   .app-shell[data-layout="list"] .profile-mark,
   .theme-preview[data-layout="list"] .profile-mark {
-    position: fixed;
+    position: absolute;
     top: 18px;
     left: 20px;
     width: 134px;
