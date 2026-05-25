@@ -57,4 +57,6 @@ npm run deploy
 
 ## Write-Up
 
-The assessment write-up is included in this repo as `BizzNEST_Linktree_Writeup.pdf`.
+The final assessment write-up is included in this repo:
+
+[BizzNEST_Linktree_Writeup.pdf](./BizzNEST_Linktree_Writeup.pdf)
