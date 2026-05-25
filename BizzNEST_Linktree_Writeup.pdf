@@ -1,0 +1,118 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2083 >>
+stream
+BT
+/F1 12 Tf
+50 742 Td
+/F1 20 Tf
+(BizzNEST Linktree Assessment Write-Up) Tj
+0 -18 Td
+/F1 12 Tf
+0 -18 Td
+/F1 12 Tf
+(Project: Jason Tello personal landing page) Tj
+0 -18 Td
+/F1 12 Tf
+(Live site: https://jasontello.github.io/bizznest-linktree-assessment/) Tj
+0 -18 Td
+/F1 12 Tf
+(Repository: https://github.com/jasontello/bizznest-linktree-assessment) Tj
+0 -18 Td
+/F1 12 Tf
+0 -24 Td
+/F1 15 Tf
+(Overview) Tj
+0 -18 Td
+/F1 12 Tf
+(This project is a polished Linktree-style personal page built with Vite, React, and plain) Tj
+0 -15 Td
+/F1 12 Tf
+(CSS. It presents Jason Tello's profile, portfolio, LinkedIn, resume, and GitHub links in a) Tj
+0 -15 Td
+/F1 12 Tf
+(responsive landing page.) Tj
+0 -18 Td
+/F1 12 Tf
+0 -24 Td
+/F1 15 Tf
+(Custom Feature) Tj
+0 -18 Td
+/F1 12 Tf
+(The custom feature is a layout toggle that switches between a classic list view and a) Tj
+0 -15 Td
+/F1 12 Tf
+(visual bento-grid view. The feature keeps the same link data while offering two) Tj
+0 -15 Td
+/F1 12 Tf
+(presentation modes: a familiar Linktree layout and a more editorial, portfolio-style grid.) Tj
+0 -18 Td
+/F1 12 Tf
+0 -24 Td
+/F1 15 Tf
+(Design Approach) Tj
+0 -18 Td
+/F1 12 Tf
+(The visual direction uses strong typography, bold color blocks, rounded shapes, and a) Tj
+0 -15 Td
+/F1 12 Tf
+(minimal interface. The page includes light and dark themes, responsive behavior,) Tj
+0 -15 Td
+/F1 12 Tf
+(accessible buttons, and clear link states.) Tj
+0 -18 Td
+/F1 12 Tf
+0 -24 Td
+/F1 15 Tf
+(Technical Notes) Tj
+0 -18 Td
+/F1 12 Tf
+(The app is component-based, with link data stored in src/data/links.js so content can be) Tj
+0 -15 Td
+/F1 12 Tf
+(updated easily. GitHub Pages deployment is configured through Vite's base path and the) Tj
+0 -15 Td
+/F1 12 Tf
+(gh-pages package.) Tj
+0 -18 Td
+/F1 12 Tf
+0 -24 Td
+/F1 15 Tf
+(Testing Checklist) Tj
+0 -18 Td
+/F1 12 Tf
+(The project was checked for production build success, deployed asset paths, live GitHub) Tj
+0 -15 Td
+/F1 12 Tf
+(Pages loading, profile image loading, link behavior, list/grid toggle behavior, theme) Tj
+0 -15 Td
+/F1 12 Tf
+(switching, and mobile layout stability.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2446
+%%EOF

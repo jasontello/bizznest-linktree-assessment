@@ -7,6 +7,14 @@ function ProfileHeader() {
         <span className="profile-mark__circle profile-mark__circle--yellow" />
       </div>
 
+      <div className="profile-card">
+        <img
+          src={`${import.meta.env.BASE_URL}face.png`}
+          alt="Jason Tello profile illustration"
+          className="profile-card__image"
+        />
+      </div>
+
       <p className="role-line">Frontend • UI/UX • Creative Technology</p>
 
       <div className="profile-copy">
