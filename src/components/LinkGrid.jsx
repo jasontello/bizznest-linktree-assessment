@@ -31,8 +31,9 @@ function LinkGrid({ links }) {
             href={link.url}
             key={link.title}
             rel={isExternal ? "noreferrer" : undefined}
-            style={{ "--grid-accent": link.accent }}
+            style={{ "--grid-accent": link.gridAccent || link.accent }}
             target={isExternal ? "_blank" : undefined}
+            download={link.download}
             aria-label={`${link.title}: ${link.description}`}
           >
             <span className="grid-card__visual" aria-hidden="true">

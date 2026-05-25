@@ -28,6 +28,7 @@ function LinkCard({ link }) {
       style={{ "--link-accent": link.accent, "--link-ink": link.ink }}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
+      download={link.download}
       aria-label={`${link.title}: ${link.description}`}
     >
       <span className="link-icon" aria-hidden="true">

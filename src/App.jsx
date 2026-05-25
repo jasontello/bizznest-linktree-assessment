@@ -37,15 +37,16 @@ function App() {
   const [inkTransition, setInkTransition] = useState(null);
   const transitionTimers = useRef([]);
   const toggleRef = useRef(null);
-  const themeSoundRef = useRef(null);
 
   const isDark = theme === "dark";
   const toggleTheme = inkTransition?.targetTheme || theme;
   const isToggleDark = toggleTheme === "dark";
   const isTransitioning = Boolean(inkTransition);
+  const themeIconSrc = `${import.meta.env.BASE_URL}${isToggleDark ? "sun.png" : "moon.png"}`;
 
   useEffect(() => {
     window.localStorage.setItem("theme", theme);
+    document.documentElement.dataset.theme = theme;
   }, [theme]);
 
   useEffect(() => {
@@ -54,22 +55,10 @@ function App() {
     };
   }, []);
 
-  function playThemeSound() {
-    if (!themeSoundRef.current) {
-      themeSoundRef.current = new Audio("/pop.mov");
-      themeSoundRef.current.preload = "auto";
-    }
-
-    themeSoundRef.current.currentTime = 0;
-    themeSoundRef.current.play().catch(() => {});
-  }
-
   function handleThemeToggle() {
     if (isTransitioning) {
       return;
     }
-
-    playThemeSound();
 
     const nextTheme = isDark ? "light" : "dark";
     const prefersReducedMotion = window.matchMedia(
@@ -120,7 +109,7 @@ function App() {
         onClick={handleThemeToggle}
       >
         <img
-          src={isToggleDark ? "/sun.png" : "/moon.png"}
+          src={themeIconSrc}
           alt=""
           aria-hidden="true"
         />

@@ -1,5 +1,6 @@
 function LayoutToggle({ mode, onModeChange }) {
   const isGrid = mode === "grid";
+  const iconSrc = `${import.meta.env.BASE_URL}${isGrid ? "list-icon.png" : "grid-icon.png"}`;
 
   return (
     <button
@@ -12,7 +13,7 @@ function LayoutToggle({ mode, onModeChange }) {
     >
       <img
         className="layout-toggle__icon"
-        src={isGrid ? "/list-icon.png" : "/grid-icon.png"}
+        src={iconSrc}
         alt=""
         aria-hidden="true"
       />
