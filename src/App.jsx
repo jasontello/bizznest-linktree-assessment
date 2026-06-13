@@ -132,7 +132,7 @@ function App() {
             "--ink-y": `${inkTransition.y}px`,
           }}
           aria-hidden="true"
-          inert=""
+          inert
         >
           <PageContent layoutMode={layoutMode} preview />
         </div>
