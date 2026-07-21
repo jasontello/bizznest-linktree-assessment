@@ -2816,7 +2816,7 @@ a {
   .app-shell[data-layout="grid"] .profile-header{
     --grid-header-base-height: 213px;
     --grid-name-top: 140px;
-    --grid-name-left: -16px;
+    --grid-name-left: 0px;
     --grid-name-width: clamp(400px, 42vw, 460px);
     --grid-name-size: clamp(5.7rem, 9.6vw, 6.45rem);
     --grid-bio-top: 102px;
@@ -2861,7 +2861,7 @@ a {
   .app-shell[data-layout="grid"] .profile-header{
     --grid-header-base-height: clamp(258px, 22.2vw, 426px);
     --grid-name-top: clamp(160px, 13.62vw, 262px);
-    --grid-name-left: clamp(-16px, -0.52vw, -10px);
+    --grid-name-left: 0px;
     --grid-name-width: 40vw;
     --grid-name-size: clamp(7rem, 9.6vw, 11.5rem);
     --grid-bio-top: clamp(120px, 9.92vw, 190px);

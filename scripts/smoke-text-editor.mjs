@@ -364,6 +364,56 @@ async function verifyProfilePopoverProximity(page) {
   return results;
 }
 
+async function verifyGridNameAlignment(page) {
+  const viewports = [
+    { width: 1800, height: 1007 },
+    { width: 1280, height: 720 },
+    { width: 761, height: 900 },
+  ];
+  const results = {};
+
+  for (const viewport of viewports) {
+    await resetPage(page, viewport);
+    await page.waitForTimeout(850);
+
+    for (const mode of ["public", "edit"]) {
+      if (mode === "edit") {
+        await enterEditMode(page);
+        await page.waitForTimeout(650);
+      }
+
+      const alignment = await page.evaluate(() => {
+        const firstName = document.querySelector(
+          ".profile-name__first .grid-intro-word",
+        );
+        const featuredCard = document.querySelector(
+          ".grid-card-shell--featured .grid-card",
+        );
+        const nameRect = firstName.getBoundingClientRect();
+        const cardRect = featuredCard.getBoundingClientRect();
+
+        return {
+          nameLeft: nameRect.left,
+          cardLeft: cardRect.left,
+          difference: nameRect.left - cardRect.left,
+        };
+      });
+
+      if (Math.abs(alignment.difference) > 0.75) {
+        throw new Error(
+          `The profile name is not aligned with the featured card at ${viewport.width}px in ${mode} mode: ${JSON.stringify(alignment)}`,
+        );
+      }
+
+      results[`${viewport.width}x${viewport.height}-${mode}`] = Number(
+        alignment.difference.toFixed(2),
+      );
+    }
+  }
+
+  return results;
+}
+
 const browser = await chromium.launch();
 const page = await browser.newPage();
 
@@ -390,6 +440,7 @@ try {
   );
   const accessibility = await verifyKeyboardAndPopover(page);
   const profilePopovers = await verifyProfilePopoverProximity(page);
+  const gridNameAlignment = await verifyGridNameAlignment(page);
   const overflow = await verifyOverflowCue(page);
 
   if (errors.length) {
@@ -398,7 +449,13 @@ try {
 
   console.log(
     "Text editor smoke check passed:",
-    JSON.stringify({ spacing, accessibility, profilePopovers, overflow }),
+    JSON.stringify({
+      spacing,
+      accessibility,
+      profilePopovers,
+      gridNameAlignment,
+      overflow,
+    }),
   );
 } finally {
   await browser.close();
