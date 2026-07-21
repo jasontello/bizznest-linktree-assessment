@@ -7,16 +7,21 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "smoke:profile-hover": "playwright install chromium && node scripts/smoke-profile-hover.mjs",
+    "smoke:reorder": "node scripts/smoke-reorder.mjs",
+    "smoke:text-editor": "node scripts/smoke-text-editor.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "motion": "^12.42.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "gh-pages": "^6.3.0",
+    "playwright": "^1.53.2",
     "vite": "^6.0.5"
   }
 }

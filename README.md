@@ -6,11 +6,15 @@ Live site: https://jasontello.github.io/bizznest-linktree-assessment/
 
 ## Project Overview
 
-This project is a responsive personal links page built with Vite, React, and plain CSS. It includes a profile section, portfolio/social links, a downloadable resume, light/dark mode, and responsive layouts for desktop and mobile.
+This project is a responsive personal links page built with Vite, React, and plain CSS. It includes a profile section, portfolio/social links, a downloadable resume, editable link/profile styling, and responsive list/grid layouts for desktop and mobile.
 
 ## Custom Feature
 
-The custom feature is a layout toggle that switches between a classic vertical Linktree list and an editorial bento-grid layout. Both views use the same link data, and the interface includes smooth visual transitions plus a light/dark theme toggle.
+The custom feature is an edit mode for customizing the live links page. Users can change link colors, update link text, change the page background, edit profile copy, and replace the profile picture. Changes save locally in the browser, and the layout toggle switches between a classic vertical Linktree list and an editorial bento-grid layout using the same link data.
+
+## Customization Persistence
+
+Edit-mode changes are saved with `localStorage`, so they persist in the same browser but are not synced to a backend or shared across devices. The Reset button restores the default link, profile, and background settings.
 
 ## Links Included
 
